@@ -1,0 +1,15 @@
+F:\dev\PHP\FinTecX\wp-content\themes\storefront-child\header.php
+<body
+<div #page
+<header #masthead
+.mp-storefront-header-col-1
+.mp-storefront-header-col-2
+.mp-storefront-header-col-3
+
+F:\dev\PHP\FinTecX\wp-includes\theme-compat\header.php
+<body
+<div #header
+
+.mp-header-col-1
+.mp-header-col-2
+.mp-header-col-3

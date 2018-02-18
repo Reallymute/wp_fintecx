@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="vender/reset.css">
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="turnBox.js"></script>
+  <style>
+
+    body {
+      background-color: #3a3a3a;
+      color: white;
+      font-size: 20px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    h2 {
+      display: block;
+      width: 100%;
+      font-weight: 300;
+      font-size: 20px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    
+    .example {
+      margin: 0px auto;
+      line-height: 4.2;
+    }
+    
+    .turnBoxButton {
+      display: block;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .turnBoxFaceNum1 {
+      background-color: #101010;
+    }
+
+    .turnBoxCurrentFace1 > .turnBoxFaceNum1 {
+      background-color: #2a2a2a;
+    }
+
+    .turnBoxCurrentFace1 > .turnBoxFaceNum1:hover {
+      background-color: #222222;
+    }
+
+    .turnBoxFaceNum2 {
+      background-color: #0087b7;
+    }
+    
+    .turnBoxCurrentFace2 > .turnBoxFaceNum2 {
+      background-color: #00adea;
+    }
+
+    .turnBoxCurrentFace2 > .turnBoxFaceNum2:hover {
+      background-color: #00a2db;
+    }
+
+  </style>
+  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<title>jQuery turnBox.js Plugin Demo</title>
+</head>
+<body>
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="http://www.jqueryscript.net/animation/3D-Box-Flip-Animation-with-jQuery-CSS3-turnBox-js.html">Download This Plugin</a></li>
+<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+    <h1 style="margin-top:150px; text-align:center">jQuery turnBox.js Plugin Demo</h1>
+    <div class="example switch">
+      <div>
+        <p class="turnBoxButton">OFF</p>
+      </div>
+      <div>
+        <p class="turnBoxButton turnBoxButtonPrev">ON</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+    $(".example").turnBox({
+      width: 340,
+      height: 87
+    });
+
+  </script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

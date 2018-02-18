@@ -1,0 +1,36 @@
+.site-branding .site-title a {
+  font-size: 32px;
+  text-align: center;
+  width: 100%;
+}
+
+.beta.site-title {
+  width: 100%;
+}
+
+.site-header .site-branding {
+  width: 100%;
+  font-size: 40px;
+  background-color: #ff6842;
+}
+
+.site-header-cart .cart-contents {
+  font-size: 24px;
+  background-color: #ff6842;
+  box-shadow: true;
+  border-width: 3px;
+  border-color: #f02727;
+  border-style: solid;
+}
+
+.site-branding .site-title {
+  width: 100%;
+  height: 6%;
+  text-align: center;
+}
+
+#site-navigation.main-navigation {
+  width: 100%;
+  top: 10px;
+  position: static;
+}
