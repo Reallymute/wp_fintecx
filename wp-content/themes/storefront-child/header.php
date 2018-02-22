@@ -162,20 +162,9 @@ $("#mp_splashoverlay").click(function(){
        
   //     div.html(div.html+ "<br>" + div.attr("height"));
        $("#billy").html($("#mp_splash").height() + " / " + $("#mp_splash").css("display"));
-  //     $("#billy").html("remplace");
-
-if ($("#mp_splash").css("display") == "none") {
-$("#mp_splash").fadeIn();
-}
-else {
-    if ($("#mp_splash").height() != 200) {
-        		div.animate({height: '200px'}, "slow");
-            }
-            else     {
-    		div.animate({height: '100px'}, "slow");
-            
-            } 
-      }
+setTimeout(function(){ 
+$("#mp_splashoverlay").fadeOut();
+}, 3000);
 });
 </script>
 	<div id="content" class="site-content" tabindex="-1">
