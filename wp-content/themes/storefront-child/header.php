@@ -163,7 +163,7 @@ $("#mp_splashoverlay").click(function(){
        $("#billy").html($("#mp_splash").height() + " / " + $("#mp_splash").css("display"));
 setTimeout(function(){ 
 $("#mp_splashoverlay").fadeOut();
-}, 3000);
+}, 300);
 });
 </script>
 	<div id="content" class="site-content" tabindex="-1">
