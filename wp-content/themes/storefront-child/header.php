@@ -51,8 +51,8 @@ z-index:1001;
 #mp_splash{ 
 position: absolute;
 display: none;
-width: 360px;
-height: 101px;
+width: 600px;
+height: 300px;
 padding: 16px;
 border: 16px solid orange;
 background-color: white;
