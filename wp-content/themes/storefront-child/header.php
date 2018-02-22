@@ -137,7 +137,7 @@ z-index:1002;
 	 * @hooked storefront_header_widget_region - 10
 	 */
 	do_action( 'storefront_before_content' ); ?>
-<p id="billy" >Click the button to wait 3 seconds, then alert "Hello".</p>
+<p id="billy" >Cliquez sur la zone grisée</p>
 <div id="mp_splashoverlay" > </div>
 <div id="mp_splash" >Bienvenu dans FintecX
 </div>
