@@ -45,7 +45,7 @@ left: 0%;
 width: 100%;
 height: 100%;
 background-color: black;
-opacity: 0.8;
+opacity: 0.5;
 z-index:1001;
 }
 #mp_splash{ 
@@ -139,8 +139,7 @@ z-index:1002;
 	do_action( 'storefront_before_content' ); ?>
 <p id="billy" >Click the button to wait 3 seconds, then alert "Hello".</p>
 <div id="mp_splashoverlay" > </div>
-<div id="mp_splash" > FintecX
-<button >Login</button>
+<div id="mp_splash" >Bienvenu dans FintecX
 </div>
 <script>
 //$("#mp-splashoverlay").show();
