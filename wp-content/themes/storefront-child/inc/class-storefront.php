@@ -249,7 +249,8 @@ if ( ! class_exists( 'Storefront' ) ) :
 
 			wp_enqueue_script( 'storefront-navigation', get_template_directory_uri() . '/assets/js/navigation' . $suffix . '.js', array(), $storefront_version, true );
 			wp_enqueue_script( 'storefront-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix' . $suffix . '.js', array(), '20130115', true );
-			wp_enqueue_script( 'turnbox', get_template_directory_uri() . '/assets/js/vendor/turnBox.js', array(), '1.1.0', true );
+// MARC P. added this line
+                        wp_enqueue_script( 'turnbox', get_template_directory_uri() . '/assets/js/vendor/turnBox.js', array(), '1.1.0', true );
 
 			if ( is_page_template( 'template-homepage.php' ) && has_post_thumbnail() ) {
 				wp_enqueue_script( 'storefront-rgbaster', get_template_directory_uri() . '/assets/js/vendor/rgbaster.min.js', array(), '1.1.0', true );

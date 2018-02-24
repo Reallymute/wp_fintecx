@@ -10,4 +10,16 @@
  * Branch : nearbyStore
  */
 
-
+class mp_nearbyStore {
+    
+       function __constructor() {
+          $currentAJAX = null;
+       
+    }
+    
+    function setStoreGeoURL($url ) {
+        
+        $connexURL = "https://reallymute-app.herokuapps.com";
+        return connexURL;
+    }
+}

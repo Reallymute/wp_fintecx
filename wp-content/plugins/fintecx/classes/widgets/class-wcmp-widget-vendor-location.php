@@ -1,17 +1,17 @@
 <?php
 /**
- * Marc's WIdget caled FinTecX Iamnotarobot
+ * WCMp Store Location Widget
  *
- * @author    Marc Petroff
+ * @author    WC Marketplace
  * @category  Widgets
- * @package   FintecX/Widgets
- * @version   1.0.0
+ * @package   WCMp/Widgets
+ * @version   2.2.0
  * @extends   WP_Widget
  */
 if (!defined('ABSPATH'))
     exit; // Exit if accessed directly
 
-class Fintecx_Iamnotarobot_Widget extends WP_Widget {
+class DC_Woocommerce_Store_Location_Widget extends WP_Widget {
 
     /**
      * constructor
@@ -23,15 +23,10 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
         global $WCMp, $wp_version;
 
         // Widget variable settings
-        $this->widget_idbase = 'fintecx-iamnotarobot';
-        $this->widget_title = __('FinTecX I am not a robot', 'fintecx');
-        $this->widget_description = __('Return a QRcode which certifies that the user is not a robot', 'fintecx');
-        $this->widget_cssclass = 'mp_iamnotarobot';
-        /*
-         * the widget class is a base name for variants that are refered to e.g;
-         * widget_cssclass_top
-         * widget_cssclass_bottom
-        */
+        $this->widget_idbase = 'dc-vendor-store-location';
+        $this->widget_title = __('WCMp Store Location', 'dc-woocommerce-multi-vendor');
+        $this->widget_description = __('Display the vendor\'s store location in Google Maps.', 'dc-woocommerce-multi-vendor');
+        $this->widget_cssclass = 'widget_wcmp_store_location';
 
         // Widget settings
         $widget_ops = array('classname' => $this->widget_cssclass, 'description' => $this->widget_description);
@@ -63,7 +58,7 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
         $vendors = false;
         // Only show current vendor widget when showing a vendor's product(s)
         $show_widget = false;
-/*        if($instance['gmap_api_key']){
+        if($instance['gmap_api_key']){
             $frontend_script_path = $WCMp->plugin_url . 'assets/frontend/js/';
             $frontend_script_path = str_replace(array('http:', 'https:'), '', $frontend_script_path);
             wp_register_script('wcmp-gmaps-api', "//maps.googleapis.com/maps/api/js?key={$instance['gmap_api_key']}&sensor=false&language=en", array('jquery'));
@@ -85,16 +80,10 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
                 $show_widget = true;
             }
         }
-*/
+
         if ($show_widget && isset($vendor->id)) {
 
-            //  MARC P. TODO get the User ID 
-            $candidate = get_user_meta($vendor->id, '_vendor_address_1', true);
-            
-            
-             wp_enqueue_script('flipit'); // script defined as in-line in the /
-                                          // source file fintecx_iamnotarobot.php
-/*            wp_enqueue_script('wcmp-gmap3');
+            wp_enqueue_script('wcmp-gmap3');
            
 
             $vendor_address_1 = get_user_meta($vendor->id, '_vendor_address_1', true);
@@ -121,12 +110,7 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
                 'gmaps_link' => esc_url(add_query_arg(array('q' => urlencode($location)), '//maps.google.com/')),
                 'location' => $location
             );
-*/
-            $args = array(
-                'instance' => $instance,
-                'qrcode' => esc_url(add_query_arg(array('serverCommand' => urlencode($location)), '//maps.google.com/')),
-                'location' => $location
-            );
+
             // Set up widget title
             if ($instance['title']) {
                 $title = apply_filters('widget_title', $instance['title'], $instance, $this->id_base);
@@ -145,7 +129,7 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
             // Action for plugins/themes to hook onto
             do_action($this->widget_cssclass . '_top');
 
-            $WCMp->template->get_template('widget/fintecx_iamnotarobot.php', $args);
+            $WCMp->template->get_template('widget/store-location.php', $args);
 
             // Action for plugins/themes to hook onto
             do_action($this->widget_cssclass . '_bottom');
@@ -167,7 +151,7 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
     public function update($new_instance, $old_instance) {
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
-        $instance['qrcode'] = strip_tags($new_instance['qrcode']);
+        $instance['gmap_api_key'] = strip_tags($new_instance['gmap_api_key']);
         return $instance;
     }
 
@@ -180,22 +164,21 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
     public function form($instance) {
         global $WCMp, $woocommerce;
         $defaults = array(
-            'title' => __('give this FinTecX widget a name (I am not a robot)', 'fintecx'),
-            'qrcode' => __('Source URL for QRcode', 'fintecx'),
+            'title' => __('Store Location', 'dc-woocommerce-multi-vendor'),
+            'gmap_api_key' => __('Google Map API key', 'dc-woocommerce-multi-vendor'),
         );
 
         $instance = wp_parse_args((array) $instance, $defaults);
         ?>
         <p>
-            Marc a persolanisé ce widget
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'fintecx') ?>:
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'dc-woocommerce-multi-vendor') ?>:
                 <input type="text" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $instance['title']; ?>" class="widefat" />
             </label>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('qrcode'); ?>"><?php _e('Source URL for QRcode', 'fintecx') ?>:
-                <input type="text" id="<?php echo $this->get_field_id('qrcode'); ?>" name="<?php echo $this->get_field_name('qrcode'); ?>" value="<?php if($instance['qrcode']) echo $instance['qrcode']; ?>" class="widefat" />
-                
+            <label for="<?php echo $this->get_field_id('gmap_api_key'); ?>"><?php _e('Google Map API key', 'dc-woocommerce-multi-vendor') ?>:
+                <input type="text" id="<?php echo $this->get_field_id('gmap_api_key'); ?>" name="<?php echo $this->get_field_name('gmap_api_key'); ?>" value="<?php if($instance['gmap_api_key']) echo $instance['gmap_api_key']; ?>" class="widefat" />
+                <span class="desc"><a href="https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key" target="_blank"><?php _e('Click here to generate key', 'dc-woocommerce-multi-vendor') ?></a> </span>
             </label>
         </p>
         <?php
