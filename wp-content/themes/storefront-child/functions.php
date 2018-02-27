@@ -97,25 +97,34 @@ function storefront_child_fintecx_widgets_init() {
         'thing1' => 'fintecx_widgets_iamnotarobot',
         'name' => 'Fintecx Widgets - I am not a robot',
         'id' => 'fintecx_widgets_iamnotarobot',
-        'before_widget' => '<div class="mp_small_widget">',
+        'before_widget' => '<div class="mp_small_widget  mp_widgetrobot">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="mp_widget_title">',
         'after_title' => '</h3>'
         
     ));
     register_sidebar(array(
-        'name' => 'Fintecx Widgets - Header Column 1',
+        'name' => 'Fintecx Header Column 1',
         'id' => 'fintecx_widgets_header_col_1',
-        'before_widget' => '<div class="mp_small_widget">',
+        'before_widget' => '<div class="mp_small_widget mp_widget1">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="mp_widget_title">',
         'after_title' => '</h3>'
         
     ));
     register_sidebar(array(
-        'name' => 'Fintecx Widgets - Header Column 2',
+        'name' => 'Fintecx Header Column '2,
         'id' => 'fintecx_widgets_header_col_2',
-        'before_widget' => '<div class="mp_small_widget">',
+        'before_widget' => '<div class="mp_small_widget mp_widget2">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="mp_widget_title">',
+        'after_title' => '</h3>'
+        
+    ));
+    register_sidebar(array(
+        'name' => 'Fintecx Header Column 3',
+        'id' => 'fintecx_widgets_header_col_3',
+        'before_widget' => '<div class="mp_small_widget mp_widget3">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="mp_widget_title">',
         'after_title' => '</h3>'
