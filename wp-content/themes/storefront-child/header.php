@@ -18,6 +18,7 @@
 <?php wp_head(); ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script >
+// MARC P. Transfer this script to the appropriate file and subfolder to adhere to Wordpress modularity rules
 $.fn.center = function () {
    // alert("in center");
    // src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
@@ -82,6 +83,9 @@ z-index:1002;
                 <div class="mp-storefront-header-col-1"><?php if (dynamic_sidebar('fintecx_widgets_header_col_1')) : else : endif; ?></div>
                 <div class="mp-storefront-header-col-2"><?php if (dynamic_sidebar('fintecx_widgets_header_col_2')) : else : endif; ?></div>
                 <div class="mp-storefront-header-col-3"><?php if (dynamic_sidebar('fintecx_widgets_header_col_3')) : else : endif; ?></div>
+                <div class="mp-storefront-header-col-4"><?php if (dynamic_sidebar('fintecx_widgets_header_col_4')) : else : endif; ?></div>
+                <div class="mp-storefront-header-col-5"><?php if (dynamic_sidebar('fintecx_widgets_header_col_5')) : else : endif; ?></div>
+                <div class="mp-storefront-header-col-6"><?php if (dynamic_sidebar('fintecx_widgets_header_col_6')) : else : endif; ?></div>
                 
                 
             </div>
@@ -145,11 +149,12 @@ z-index:1002;
 <p id="billy" >Cliquez sur la zone grisée</p>
 <div id="mp_splashoverlay" > </div>
 <div id="mp_splash" ><h3 > <font color="white">Bienvenu dans FintecX</font></h3>
-    <img width="128" height="128" src="http://t3v1.axerex.fr/wp-content/uploads/2018/02/Letter-P-icon.png" class="image wp-image-115  attachment-full size-full" alt="" style="max-width: 100%; height: auto;">
+    <img width="128" height="128" src="http://t3v1.axerex.fr/wp-content/uploads/2018/02/Logo-Marque-Impek.png" class="image wp-image-115  attachment-full size-full" alt="" style="max-width: 100%; height: auto;">
 </div>
 <script >
 //$("#mp-splashoverlay").show();
-
+// MARC P. Transfer this script to the appropriate file and subfolder to adhere to Wordpress modularity rules
+if (true) {
 setTimeout(function(){ 
 $("#mp_splashoverlay").fadeIn();
 }, 3000);
@@ -161,19 +166,15 @@ mps.css("width", Math.max(0, ($(window).width() / 3) + "px"));
 $("#mp_splash").fadeIn();
 }, 3500);
 $("#mp_splash").click(function(){
-  $("#billy").html("got click");
   $("#mp_splash").fadeOut();
 });
 $("#mp_splashoverlay").click(function(){
-    var div = $("#mp_splash");
-  //  		div.animate({height: '200px'}, "slow");
-       
-  //     div.html(div.html+ "<br>" + div.attr("height"));
-       $("#billy").html($("#mp_splash").height() + " / " + $("#mp_splash").css("display") + " /windowheight: " + $(window).height()+ " /splash position " + $("#mp_splash").css("position") + " /window width " + $(window).width());
+$("#mp_splash").fadeOut();
 setTimeout(function(){ 
 $("#mp_splashoverlay").fadeOut();
-}, 300);
+}, 300); 
 });
+}
 </script>
 	<div id="content" class="site-content" tabindex="-1">
 		<div class="col-full">

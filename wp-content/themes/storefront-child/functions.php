@@ -19,9 +19,9 @@ $storefront_version = $theme['Version'];
 function storefront_child_enqueue_style() {
     $parent_style = 'storefront-style';
     wp_enqueue_style($parent_style,get_template_directory_uri() . '/style.css');
-    wp_enqueue_style('child-style',get_stylesheet_directory_uri() . '/styles.css',
+  /*  wp_enqueue_style('child-style',get_stylesheet_directory_uri() . '/style.css',
             array($parent_style),
-            wp_get_theme()->get('Version'));
+            wp_get_theme()->get('Version')); */
 }
 
 add_action('wp_enqueue_scripts','storefront_child_enqueue_style');
@@ -95,7 +95,7 @@ add_action("wp_register_widgets",'fintecx_widgets_iamnotarobot');
 function storefront_child_fintecx_widgets_init() {
     register_sidebar(array(
         'thing1' => 'fintecx_widgets_iamnotarobot',
-        'name' => 'Fintecx Widgets - I am not a robot',
+        'name' => 'Fintecx I am not a robot',
         'id' => 'fintecx_widgets_iamnotarobot',
         'before_widget' => '<div class="mp_small_widget  mp_widgetrobot">',
         'after_widget' => '</div>',
@@ -113,7 +113,7 @@ function storefront_child_fintecx_widgets_init() {
         
     ));
     register_sidebar(array(
-        'name' => 'Fintecx Header Column '2,
+        'name' => 'Fintecx Header Column 2',
         'id' => 'fintecx_widgets_header_col_2',
         'before_widget' => '<div class="mp_small_widget mp_widget2">',
         'after_widget' => '</div>',
@@ -130,14 +130,41 @@ function storefront_child_fintecx_widgets_init() {
         'after_title' => '</h3>'
         
     ));
+    register_sidebar(array(
+        'name' => 'Fintecx Header Column 4',
+        'id' => 'fintecx_widgets_header_col_4',
+        'before_widget' => '<div class="mp_small_widget mp_widget4">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="mp_widget_title">',
+        'after_title' => '</h3>'
+        
+    ));
+    register_sidebar(array(
+        'name' => 'Fintecx Header Column 5',
+        'id' => 'fintecx_widgets_header_col_5',
+        'before_widget' => '<div class="mp_small_widget mp_widget5">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="mp_widget_title">',
+        'after_title' => '</h3>'
+        
+    ));
+    register_sidebar(array(
+        'name' => 'Fintecx Header Column 6',
+        'id' => 'fintecx_widgets_header_col_6',
+        'before_widget' => '<div class="mp_small_widget mp_widget6">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="mp_widget_title">',
+        'after_title' => '</h3>'
+        
+    ));
    
 }
 
 add_action('widgets_init','storefront_child_fintecx_widgets_init');
-        
+/*        
 function storefront_child_scripts() {
     
-    wp_enqueue_script('mp_script_iamnotarobot',get_stylesheet_directory_uri().'js\mp_iamnotarobot.js');
+    wp_enqueue_script('mp_script_iamnotarobot',get_stylesheet_directory_uri().'\js\mp_iamnotarobot.js');
 }
-
-add_action('wp_enqueue_scripts','storefront_child_scripts');
+*/
+//add_action('wp_enqueue_scripts','storefront_child_scripts');
