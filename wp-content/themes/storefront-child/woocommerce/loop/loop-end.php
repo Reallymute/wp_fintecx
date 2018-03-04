@@ -23,5 +23,5 @@
 if (dynamic_sidebar('fintecx_widgets_iamnotarobot')) : else : endif; 
 
 ?>
-Marc instroduced the dynamic_sidebar above whihc is hooked to the iamnotarobot Widget Space
+Marc instroduced the dynamic_sidebar for 'fintecx_widgets_iamnotarobot' into woocommerce/loop/loop-end.php 
 </ul>

@@ -14,7 +14,7 @@ global $fintecxPlugin;
 
 ?><div class="fintecx-iamnotarobot-wrapper">
 		<div class="flipthis" ></div>
-		<a href="<?php echo $qrcode ?>" target="_blank"><?php _e( 'FintecX Iamnotarobot', 'fintecx' ) ?></a>
+		<a href="<?php echo $qrcode ?>" target="_blank"><?php _e( 'Cliquez Ici <br> Widget FintecX I am not a robot', 'fintecx' ) ?></a>
                 <div class="example switch">
   <div>
     <p class="turnBoxButton">OFF</p>

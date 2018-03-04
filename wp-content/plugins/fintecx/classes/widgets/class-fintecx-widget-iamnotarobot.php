@@ -4,7 +4,7 @@
  *
  * @author    Marc Petroff
  * @category  Widgets
- * @package   FintecX/Widgets
+ * @package   FinTecX/Widgets
  * @version   1.0.0
  * @extends   WP_Widget
  */
@@ -38,6 +38,8 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
 
         // Widget control settings
         $control_ops = array('width' => 250, 'height' => 350, 'id_base' => $this->widget_idbase);
+        // MARC P. TODO delete this line
+echo('<br>Going to create widget class-fintecx-widgit-iamnotarobot.php<br>');
 
         // Create the widget
         if ($wp_version >= 4.3) {
@@ -62,7 +64,7 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
         $vendor_id = false;
         $vendors = false;
         // Only show current vendor widget when showing a vendor's product(s)
-        $show_widget = false;
+        $show_widget = true;
 /*        if($instance['gmap_api_key']){
             $frontend_script_path = $fintecxPlugin->plugin_url . 'assets/frontend/js/';
             $frontend_script_path = str_replace(array('http:', 'https:'), '', $frontend_script_path);
@@ -86,7 +88,8 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
             }
         }
 */
-        if ($show_widget && isset($vendor->id)) {
+        //  MARC P. forced the if to true
+        if ($show_widget && isset($vendor->id) || true) {
 
             //  MARC P. TODO get the User ID 
             $candidate = get_user_meta($vendor->id, '_vendor_address_1', true);
@@ -134,7 +137,9 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
                 $title = false;
             }
 
-            // Before widget (defined by themes)
+        // MARC P. TODO delete this line
+echo('<br>Just before echo before_widget in class-fintecx-widgit-iamnotarobot.php<br>');
+           // Before widget (defined by themes)
             echo $before_widget;
 
             // Display the widget title if one was input (before and after defined by themes).
@@ -146,6 +151,10 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
             do_action($this->widget_cssclass . '_top');
 
             $fintecxPlugin->template->get_template('widget/fintecx_iamnotarobot.php', $args);
+        // MARC P. TODO delete this line
+echo('<br>Got template in class-fintecx-widgit-iamnotarobot.php<br>');
+
+
 
             // Action for plugins/themes to hook onto
             do_action($this->widget_cssclass . '_bottom');

@@ -4,7 +4,7 @@
  * FinTecX-Widget Main Class
  *
  * @version		2.2.0
- * @package		WCMp
+ * @package		FinTecX
  * @author 		WC Marketplace
  */
 if (!defined('ABSPATH')) {
@@ -61,7 +61,8 @@ final class FinTecXPlugin {
                 
         // Intialize WCMp
         add_action('init', array(&$this, 'init'));
-
+        // MARC P. TODO delete this line
+echo('<br>Construction of class-fintecx.php<br>');
     }
 
     /**
@@ -75,8 +76,14 @@ final class FinTecXPlugin {
             $this->load_class('ajax');
             $this->ajax = new WCMp_Ajax();
         } */
+        $this->load_class('template');
+        $this->template = new FinTecX_Template();
+        add_filter('template_include', array($this, 'template_loader'));
 
         do_action('fintecx_init');
+                // MARC P. TODO delete this line
+echo('<br>Came back from do_action in class-fintecx.php<br>');
+
     }
 
     /**
@@ -86,6 +93,7 @@ final class FinTecXPlugin {
     public function load_class($class_name = '') {
         if ('' != $class_name && '' != $this->token) {
             require_once ( 'class-' . esc_attr($this->token) . '-' . esc_attr($class_name) . '.php' );
+            echo('<br> Getting file (in class-fintecx.php) : '. 'class-' . esc_attr($this->token) . '-' . esc_attr($class_name) . '.php<br> ');
         }
     }
 
@@ -99,6 +107,17 @@ final class FinTecXPlugin {
     function init_custom_widgets() {
         $this->load_class('widget-init');
         new FinTecX_Widget_Init();
+    }
+    /**
+     * Load vendor shop page template
+     * @param type $template
+     * @return type
+     */
+    function template_loader($template) {
+        if (is_tax('dc_vendor_shop')) {
+            $template = $this->template->locate_template('taxonomy-dc_vendor_shop.php');
+        }
+        return $template;
     }
 
 }
