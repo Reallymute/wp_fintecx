@@ -1,0 +1,22 @@
+<?php
+/**
+ * Plugin Name: WooSocio
+ * Plugin URI: http://genialsouls.com/
+ * Description: It will upload/post your Woo products to facebook wall, pages and groups on publish. Also adds like/share buttons in Woo products.
+ * Author: Qamar Sheeraz
+ * Author URI: http://genialsouls.com/
+ * Version: 1.5.1
+ * Stable tag: 1.5.1
+ * License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ */
+
+ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+ require_once( 'classes/class-fintecx.php' );
+ require_once( 'classes/woosocio_widget.php' );
+//  MARC P. adapted this to fintecx
+ global $fintecxPlugin;
+ $fintecxPlugin = new FinTecXPlugin( __FILE__ );
+ $fintecxPlugin->version = '0.0.1';
+ $fintecxPlugin->init();
+?>

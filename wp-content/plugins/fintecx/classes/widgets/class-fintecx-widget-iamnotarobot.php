@@ -20,7 +20,7 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
      * @return void
      */
     function __construct() {
-        global $WCMp, $wp_version;
+        global $fintecxPlugin, $wp_version;
 
         // Widget variable settings
         $this->widget_idbase = 'fintecx-iamnotarobot';
@@ -57,14 +57,14 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
      * @return void
      */
     public function widget($args, $instance) {
-        global $WCMp, $woocommerce;
+        global $fintecxPlugin, $woocommerce;
         extract($args, EXTR_SKIP);
         $vendor_id = false;
         $vendors = false;
         // Only show current vendor widget when showing a vendor's product(s)
         $show_widget = false;
 /*        if($instance['gmap_api_key']){
-            $frontend_script_path = $WCMp->plugin_url . 'assets/frontend/js/';
+            $frontend_script_path = $fintecxPlugin->plugin_url . 'assets/frontend/js/';
             $frontend_script_path = str_replace(array('http:', 'https:'), '', $frontend_script_path);
             wp_register_script('wcmp-gmaps-api', "//maps.googleapis.com/maps/api/js?key={$instance['gmap_api_key']}&sensor=false&language=en", array('jquery'));
             wp_register_script('wcmp-gmap3', $frontend_script_path . 'gmap3.min.js', array('jquery', 'wcmp-gmaps-api'), '6.0.0', false);
@@ -145,7 +145,7 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
             // Action for plugins/themes to hook onto
             do_action($this->widget_cssclass . '_top');
 
-            $WCMp->template->get_template('widget/fintecx_iamnotarobot.php', $args);
+            $fintecxPlugin->template->get_template('widget/fintecx_iamnotarobot.php', $args);
 
             // Action for plugins/themes to hook onto
             do_action($this->widget_cssclass . '_bottom');
@@ -178,7 +178,7 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
      * @return void
      */
     public function form($instance) {
-        global $WCMp, $woocommerce;
+        global $fintecxPlugin, $woocommerce;
         $defaults = array(
             'title' => __('give this FinTecX widget a name (I am not a robot)', 'fintecx'),
             'qrcode' => __('Source URL for QRcode', 'fintecx'),

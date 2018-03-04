@@ -9,7 +9,8 @@
  * @version     0.0.1
  */
 extract( $instance );
-global $WCMp;
+global $fintecxPlugin;
+//  $fintecxPlugin is instanciated in fintecx-plugin.php
 
 ?><div class="fintecx-iamnotarobot-wrapper">
 		<div class="flipthis" ></div>
