@@ -13,7 +13,7 @@ class FinTecX_Widget_Init {
         add_action('widgets_init', array($this, 'fintecx_register_widgets'));
         add_action('wp_dashboard_setup', array($this, 'wcmp_rm_meta_boxes'));
         // MARC P. TODO delete this line
-echo('<br>Instanciate (from versiion in classes) of class-fintecx-widgit-init.php<br>');
+//echo('<br>Instanciate (from versiion in classes) of class-fintecx-widgit-init.php<br>');
     }
 
     /**

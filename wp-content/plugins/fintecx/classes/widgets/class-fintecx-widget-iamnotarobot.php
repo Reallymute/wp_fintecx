@@ -39,7 +39,7 @@ class Fintecx_Iamnotarobot_Widget extends WP_Widget {
         // Widget control settings
         $control_ops = array('width' => 250, 'height' => 350, 'id_base' => $this->widget_idbase);
         // MARC P. TODO delete this line
-echo('<br>Going to create widget class-fintecx-widgit-iamnotarobot.php<br>');
+//echo('<br>Going to create widget class-fintecx-widgit-iamnotarobot.php<br>');
 
         // Create the widget
         if ($wp_version >= 4.3) {
@@ -138,7 +138,7 @@ echo('<br>Going to create widget class-fintecx-widgit-iamnotarobot.php<br>');
             }
 
         // MARC P. TODO delete this line
-echo('<br>Just before echo before_widget in class-fintecx-widgit-iamnotarobot.php<br>');
+//echo('<br>Just before echo before_widget in class-fintecx-widgit-iamnotarobot.php<br>');
            // Before widget (defined by themes)
             echo $before_widget;
 
@@ -152,7 +152,7 @@ echo('<br>Just before echo before_widget in class-fintecx-widgit-iamnotarobot.ph
 
             $fintecxPlugin->template->get_template('widget/fintecx_iamnotarobot.php', $args);
         // MARC P. TODO delete this line
-echo('<br>Got template in class-fintecx-widgit-iamnotarobot.php<br>');
+//echo('<br>Got template in class-fintecx-widgit-iamnotarobot.php<br>');
 
 
 

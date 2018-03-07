@@ -93,7 +93,9 @@ class FinTecX_Template {
 
         // Get default slug-name.php
         if (!$template && $name && file_exists($fintecxPlugin->plugin_path . "templates/{$slug}-{$name}.php"))
-            $template = $fintecxPlugin->plugin_path . "templates/{$slug}-{$name}.php";
+           // $template = $fintecxPlugin->plugin_path . "templates/{$slug}-{$name}.php";
+        // MARC P. replaced the line above to force use of a template
+        $template = $fintecxPlugin->plugin_path . "templates/widget/class-fintecx-template.php";
 
         // If template file doesn't exist, look in yourtheme/slug.php and yourtheme/woocommerce/slug.php
         if (!$template)

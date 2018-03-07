@@ -62,7 +62,7 @@ final class FinTecXPlugin {
         // Intialize WCMp
         add_action('init', array(&$this, 'init'));
         // MARC P. TODO delete this line
-echo('<br>Construction of class-fintecx.php<br>');
+//echo('<br>Construction of class-fintecx.php<br>');
     }
 
     /**
@@ -82,7 +82,7 @@ echo('<br>Construction of class-fintecx.php<br>');
 
         do_action('fintecx_init');
                 // MARC P. TODO delete this line
-echo('<br>Came back from do_action in class-fintecx.php<br>');
+//echo('<br>Came back from do_action in class-fintecx.php<br>');
 
     }
 
@@ -93,7 +93,7 @@ echo('<br>Came back from do_action in class-fintecx.php<br>');
     public function load_class($class_name = '') {
         if ('' != $class_name && '' != $this->token) {
             require_once ( 'class-' . esc_attr($this->token) . '-' . esc_attr($class_name) . '.php' );
-            echo('<br> Getting file (in class-fintecx.php) : '. 'class-' . esc_attr($this->token) . '-' . esc_attr($class_name) . '.php<br> ');
+            //echo('<br> Getting file (in class-fintecx.php) : '. 'class-' . esc_attr($this->token) . '-' . esc_attr($class_name) . '.php<br> ');
         }
     }
 

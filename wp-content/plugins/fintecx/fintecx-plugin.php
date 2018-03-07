@@ -20,6 +20,6 @@
  $fintecxPlugin->version = '0.0.1';
  $fintecxPlugin->init();
          // MARC P. TODO delete this line
-echo('<br>Creates Plugin of fintecx-plugin.php<br>');
+//echo('<br>Creates Plugin of fintecx-plugin.php<br>');
 
 ?>
