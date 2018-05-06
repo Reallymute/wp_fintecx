@@ -96,7 +96,7 @@ wp_add_inline_script( 'flipit',
             contr.innerHTML = data.json_content.server_response;
         });
         var conuuu = document.getElementById('control1');
-       conuuu.innerHTML="getJSON was processed";
+        conuuu.innerHTML="getJSON was processed";
 
     });
     });
