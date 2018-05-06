@@ -79,19 +79,29 @@ wp_add_inline_script( 'flipit',
  *  }    
     */
    
-             jQuery(document).ready(function ($) {alert("After click");
-             
+             jQuery(document).ready(function ($) {
+        alert("After click");
+       document.getElementById('control1').innerHTML="Doc is Ready!";
+        
         $("#qrcode_btn").click(function() {
              alert("inside click");
-       
+       document.getElementById('control1').innerHTML="Ready For Click result";
+       $.ajaxSetup({
+  headers : {   
+    'Access-Control-Allow-Origin' : '*'
+  }
+});
         $.getJSON("<?php echo $qrcode ?>",function(data,status) {
             var contr = document.getElementById('control1');
             contr.innerHTML = data.json_content.server_response;
         });
+        var conuuu = document.getElementById('control1');
+       conuuu.innerHTML="getJSON was processed";
+
     });
     });
 
-    
+    // a href="https://reallymute-app.herokuapp.com/HandleServerRequest?servercmd=QRCODE_GENERATOR" target="_blank">Cliquez Ici <br> Widget FintecX I am not a robot</a>
     /*
     $(".flipthis").on("click",function() {
     $(".turnBoxButton").turnBox({
